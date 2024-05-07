@@ -1,0 +1,44 @@
+:host{
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+.mat-mdc-card{
+  width: 40vw;
+  height: 80vh;
+  background: antiquewhite;
+  span{
+    text-align: center;
+    width: 100%;
+    font-size: 1.7rem;
+    color: black;
+    font-weight: bold;
+  }
+  .mat-mdc-card-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .form-login{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      gap: 5%;
+      padding-top: 7%;
+      .btn-submit{
+        width: 10vw;
+        padding: 2%;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 4px 0px #0000004f;
+        background: #ffffff7a;
+        color: black;
+        cursor: pointer;
+        &:active{
+          box-shadow: inset 1px 1px 4px 0px rgba(0, 0, 0, 0.3098039216);
+        }
+      }
+    }
+  }
+}
