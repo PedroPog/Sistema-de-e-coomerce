@@ -1,4 +1,10 @@
 <mat-toolbar>
   <span>Home</span>
-  <mat-icon class="mat-18" routerLink="/login">login</mat-icon>
+  <ng-container *ngIf="name">
+    <span>{{ name }}</span>
+  </ng-container>
+  <ng-container *ngIf="!name">
+    <mat-icon class="mat-18" routerLink="/login">login</mat-icon>
+  </ng-container>
 </mat-toolbar>
+
