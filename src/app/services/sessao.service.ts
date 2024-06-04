@@ -16,12 +16,13 @@ export class SessaoService {
   limparSessao(){
     sessionStorage.clear();
     this.route.navigate(['/']);
+    location.reload();
   }
   salvarSessao(obj:any){
     sessionStorage.setItem("nome",obj.nome);
     sessionStorage.setItem("role",obj.role);
     if(obj.role=="Administrador"){
-      //return this.route.navigate(['/admin']);
+      return this.route.navigate(['/admin']);
     }
     return this.route.navigate(['/']);
   }

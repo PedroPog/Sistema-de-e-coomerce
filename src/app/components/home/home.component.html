@@ -1,10 +1,39 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>Home</span>
+  <span class="example-spacer"></span>
   <ng-container *ngIf="name">
-    <span>{{ name }}</span>
+    <button mat-button [matMenuTriggerFor]="menu" class="btn-font"
+        aria-label="Menu Profile">
+      {{ name }}<mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon >shopping_cart</mat-icon>
+        <span>Carrinho</span>
+      </button>
+      <ng-container *ngIf="role=='Administrador'">
+        <button mat-menu-item>
+          <mat-icon>admin_panel_settings</mat-icon>
+          <span>Area Restrita</span>
+        </button>
+      </ng-container>
+      <ng-container *ngIf="role!='Administrador'">
+        <button mat-menu-item>
+          <mat-icon>badge</mat-icon>
+          <span>Perfil</span>
+        </button>
+      </ng-container>
+      <button mat-menu-item (click)="limparSessao()">
+        <mat-icon>logout</mat-icon>
+        <span>Sair</span>
+      </button>
+    </mat-menu>
   </ng-container>
   <ng-container *ngIf="!name">
-    <mat-icon class="mat-18" routerLink="/login">login</mat-icon>
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="/login"
+            aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+    </button>
   </ng-container>
 </mat-toolbar>
-
+<router-outlet></router-outlet>

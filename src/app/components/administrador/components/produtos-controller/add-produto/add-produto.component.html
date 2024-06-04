@@ -1,0 +1,34 @@
+<!-- src/app/product-form/product-form.component.html -->
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="form-group">
+      <label for="nomeProduto">Nome do Produto</label>
+      <input type="text" id="nomeProduto" name="nomeProduto" [(ngModel)]="produto.nomeProduto" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" [(ngModel)]="produto.descricao" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="preco">Preço</label>
+      <input type="number" id="preco" name="preco" [(ngModel)]="produto.preco" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="checkbox" id="status" name="status" [(ngModel)]="produto.status" class="form-check-input">
+    </div>
+    <div class="form-group">
+      <label for="nacionalidade">Nacionalidade</label>
+      <input type="text" id="nacionalidade" name="nacionalidade" [(ngModel)]="produto.nacionalidade" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="estoque">Estoque</label>
+      <input type="number" id="estoque" name="estoque" [(ngModel)]="produto.estoque" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="imagem">Imagem</label>
+      <input type="file" id="imagem" class="form-control-file" (change)="onFileSelected($event)" multiple>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Cadastrar</button>
+  </form>
+</div>

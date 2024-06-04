@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <section class="sidebar_adm">
+      <img [src]="imagePath" alt="Logo">
+      <ul class="opcoes">
+        <li routerLink="/admin"><span>Dashboard</span></li>
+        <li routerLink="/admin/produtos"><span>Produtos</span></li>
+        <li routerLink="/admin/pedidos"><span>Pedidos</span></li>
+        <li routerLink="/admin/usuarios"><span>Usuario</span></li>
+      </ul>
+      <div class="infos">
+        <span>{{user}}</span>
+        <button mat-button class="btn-logout" (click)="onLogout()">
+          Logout <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </section>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
